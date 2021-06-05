@@ -253,7 +253,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Rizvan Dimas Saputra Ariyanto</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -289,15 +289,14 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
+                    <h1 class="h3 mb-2 text-gray-800">Buku Perpustakaan</h1>
+                    <p class="mb-4">Buku adalah jendela dunia di mana kita bisa melihat isi dunia tanpa 
+                    melakukan perjalanan, hanya cukup membaca sebuah halaman.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Data Buku Dalam Rak</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -316,8 +315,8 @@
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $dBuku->judul }}</td>
-                                            <td>{{ $dBuku->jenis }}</td>
                                             <td>{{ $dBuku->tahun_terbit }}</td>
+                                            <td>{{ $dBuku->jenis }}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -336,7 +335,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Praktikum PTW 2021</span>
                     </div>
                 </div>
             </footer>

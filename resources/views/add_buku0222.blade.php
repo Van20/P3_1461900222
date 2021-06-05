@@ -248,7 +248,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Rizvan Dimas Saputra</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Rizvan Dimas Saputra Ariyanto</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -295,7 +295,7 @@
                         </div>
                         <div class="card-body">
                             <a class="collapse-item" href="{{'/addBookPage'}}">
-                                <button type="button" class="btn btn-outline-primary">Tambah Buku</button> 
+                                <button type="button" class="btn btn-outline-primary">Tambah Buku +</button> 
                             </a>
                         </div>
                         <div class="card-body">
@@ -367,7 +367,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Praktikum PTW 2021</span>
                     </div>
                 </div>
             </footer>
