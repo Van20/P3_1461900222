@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Kegiatan 3</title>
+    <title>SB Admin 2 - Blank</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{'/'}}">
+                <a class="nav-link" href="/">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -97,6 +97,20 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -248,7 +262,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Rizvan Dimas Saputra</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -281,81 +295,22 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">PENGATURAN DATA BUKU</h1>
-                    <p class="mb-4">Budayakan ilmu membaca. Semakin banyak membaca akan meluaskan 
-                    wawasan dan ilmu pengetahuan kita</p>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">List Buku</h6>
-                        </div>
-                        <div class="card-body">
-                            <a class="collapse-item" href="{{'/addBookPage'}}">
-                                <button type="button" class="btn btn-outline-primary">Tambah Buku</button> 
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Judul Buku</th>
-                                            <th>Tahun Terbit</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php $no=1 ?>
-                                        @foreach ($addBuku as $buku)
-                                        <tr>
-                                            <td>{{ $no++ }}</td>
-                                            <td>{{ $buku->judul }}</td>
-                                            <td>{{ $buku->tahun_terbit }}</td>
-                                            <td>
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit</button>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-whatever="@fat">Hapus</button>
-
-                                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form>
-                                                            <div class="form-group">
-                                                                <label for="recipient-name" class="col-form-label">Judul Buku :</label>
-                                                                <input type="text" class="form-control" id="jdl_buku">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="message-text" class="col-form-label">Tahun Terbit :</label>
-                                                                <input type="text" class="form-control" id="thn_terbit"></input>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Send message</button>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                    <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Judul Buku</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Isikan Judul Buku">
                     </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Tahun Terbit</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Isikan Tahun Terbit">
+                    </div>
+                    <div><br></div>
+                    <div>
+                        <button type="button" class="btn btn-primary">Tambahkan</button>
+                    </div>
+                    </form>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -367,7 +322,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
             </footer>
@@ -413,13 +368,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 

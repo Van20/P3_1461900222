@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{'/'}}">
+                <a class="nav-link" href="{{'/'}}"
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -294,7 +294,9 @@
                             <h6 class="m-0 font-weight-bold text-primary">List Jenis Buku</h6>
                         </div>
                         <div class="card-body">
-                        <button type="button" class="btn btn-outline-primary">Tambah Jenis Buku</button> 
+                            <a class="collapse-item" href="{{'/addJenisBookPage'}}">
+                                <button type="button" class="btn btn-outline-primary">Tambah Jenis Buku</button> 
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -313,7 +315,37 @@
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $jenis_buku->jenis }}</td>
                                             <td>
-                                                <button type="button" class="btn btn-danger">Hapus</button>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Edit</button>
+                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-whatever="@fat">Hapus</button>
+
+                                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                    <div class="form-group">
+                                                                        <label for="recipient-name" class="col-form-label">Judul Buku :</label>
+                                                                        <input type="text" class="form-control" id="jdl_buku">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="message-text" class="col-form-label">Tahun Terbit :</label>
+                                                                        <input type="text" class="form-control" id="thn_terbit"></input>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Send message</button>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
                                             </td>
                                         </tr>
                                         @endforeach

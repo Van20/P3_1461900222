@@ -22,6 +22,20 @@ class SelectController extends Controller
         return view('add_buku0222', ['addBuku' => $addBuku]);
     }
 
+    public function addbookpage()
+    {
+        $addBukuPage = Select::all();
+
+        return view('buku0222', ['addBukuPage' => $addBukuPage]);
+    }
+
+    public function editbookpage()
+    {
+        $editBukuPage = Select::all();
+
+        return view('edit_buku0222', ['editBukuPage' => $editBukuPage]);
+    }
+
     public function viewbook()
     {
         $dataBuku = DB::table('rak_buku')
@@ -37,6 +51,20 @@ class SelectController extends Controller
         $addJenisBuku = SelectJenisBuku::all();
 
         return view('add_jenis_buku0222', ['addJenisBuku' => $addJenisBuku]);
+    }
+
+    public function addjenisbookpage()
+    {
+        $addJenisBukuPage = SelectJenisBuku::all();
+
+        return view('jenisbuku0222', ['addJenisBukuPage' => $addJenisBukuPage]);
+    }
+
+    public function editjenisbookpage()
+    {
+        $editJenisBukuPage = SelectJenisBuku::all();
+
+        return view('edit_jenisbuku0222', ['editJenisBukuPage' => $editJenisBukuPage]);
     }
 
     public function selectLike()
