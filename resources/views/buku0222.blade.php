@@ -283,18 +283,20 @@
                 <!-- Begin Page Content -->
                 <div class="container">
 
-                    <form>
+                    <form method="post" action="/buku/store">
+                    {{ csrf_field() }}
+
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Judul Buku</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Isikan Judul Buku">
+                        <input type="text"  name="judul" required="required" class="form-control"  placeholder="Isikan Judul Buku">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Tahun Terbit</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Isikan Tahun Terbit">
+                        <input type="text" name="tahun_terbit" required="required" class="form-control" placeholder="Isikan Tahun Terbit">
                     </div>
                     <div><br></div>
                     <div>
-                        <button type="button" class="btn btn-primary">Tambahkan</button>
+                        <button type="submit" class="btn btn-primary">Tambahkan</button>
                     </div>
                     </form>
 

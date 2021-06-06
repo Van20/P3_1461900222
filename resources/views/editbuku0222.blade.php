@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Kegiatan 3</title>
+    <title>SB Admin 2 - Blank</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{'/'}}">
+                <a class="nav-link" href="/">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -281,59 +281,26 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container">
+                    @foreach($buku as $b)
+                        <form action="/buku/update" method="post">
+                        {{ csrf_field() }}
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">PENGATURAN DATA BUKU</h1>
-                    <p class="mb-4">Budayakan ilmu membaca. Semakin banyak membaca akan meluaskan 
-                    wawasan dan ilmu pengetahuan kita</p>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">List Buku</h6>
+                        <input type="hidden" name="id" value="{{ $b->id }}"> 
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Judul Buku</label>
+                            <input type="text" class="form-control" required="required" name="judul" value="{{ $b->judul }}">
                         </div>
-                        <div class="card-body">
-                            <a class="collapse-item" href="{{'/addBookPage'}}">
-                                <button type="button" class="btn btn-outline-primary">Tambah Buku +</button> 
-                            </a>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Tahun Terbit</label>
+                            <input type="text" class="form-control" required="required" name="tahun_terbit" value="{{ $b->tahun_terbit }}">
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Judul Buku</th>
-                                            <th>Tahun Terbit</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php $no=1 ?>
-                                        @foreach ($addBuku as $bukuadd)
-                                        <tr>
-                                            <td>{{ $no++ }}</td>
-                                            <td>{{ $bukuadd->judul }}</td>
-                                            <td>{{ $bukuadd->tahun_terbit }}</td>
-                                            <td>
-                                                <a  href="/addBook/{{ $bukuadd->id }}">
-                                                    <button type="submit" class="btn btn-primary" name="submit" value="Submit form" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
-                                                        Edit
-                                                    </button>
-                                                </a>
-                                                <a  href="/addBook/hapus/{{ $bukuadd->id }}">
-                                                    <button type="submit" class="btn btn-danger" data-toggle="modal" data-whatever="@fat">Hapus</button>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div><br></div>
+                        <div>
+                            <button type="submit" class="btn btn-primary">Simpan Data</button>
                         </div>
-                    </div>
-
+                        </form>
+                    @endforeach
                 </div>
                 <!-- /.container-fluid -->
 
@@ -390,13 +357,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\BukuController;
 use App\Http\Controllers\SelectController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -14,11 +15,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [SelectController::class, 'viewbook']);
 
-Route::get('/addBook', [SelectController::class, 'addbook']);
-Route::get('/addBookPage', [SelectController::class, 'addbookpage']);
-Route::get('/editBookPage', [SelectController::class, 'editbookpage']);
+Route::get('/', [BukuController::class, 'index']);
+
+
+Route::post('/buku/store', [BukuController::class, 'store']);
+Route::get('/addBook/{id}', [BukuController::class, 'edit']);;
+Route::post('/buku/update', [BukuController::class, 'update']);
+Route::get('/addBook/hapus/{id}', [BukuController::class, 'delete']);;
+
+Route::get('/addBook', [BukuController::class, 'addbook']);
+Route::get('/addBookPage', [BukuController::class, 'create'])->name('create');;
+
+
+
+//Route::get('/editBookPage','BukuController@edit')->name('editBookPage');
 
 Route::get('/addJenisBook', [SelectController::class, 'addjenisbook']);
 Route::get('/addJenisBookPage', [SelectController::class, 'addjenisbookpage']);
